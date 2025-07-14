@@ -11,8 +11,10 @@ export default function Profile() {
     <Container>
       <SideBar />
       <MainContent>
+      <SearchModal />
+
         <Header>
-          <Image src={CoverBg} alt="Cover" layout="fill" objectFit="cover" />
+          <Image src={CoverBg} alt="Cover" fill/>
           <div className="profile-pic">
             <Image src={ProfileIcon} alt="Profile" width={80} height={80} />
           </div>

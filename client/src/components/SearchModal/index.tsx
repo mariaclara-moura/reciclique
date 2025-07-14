@@ -33,49 +33,53 @@ export default function SearchModal() {
 
   return (
     <Container>
-      <SearchInput>
-        <input
-          type="text"
-          placeholder="Pesquise por um Item"
-          value={query}
-          onChange={e => setQuery(e.target.value)}
-        />
-        {query && (
-          <button onClick={() => setQuery('')}>✖</button>
+      <div style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
+        <SearchInput>
+          <input
+            type="text"
+            placeholder="Pesquise por um Item"
+            value={query}
+            onChange={e => setQuery(e.target.value)}
+          />
+          {query && (
+            <button onClick={() => setQuery('')}>✖</button>
+          )}
+        </SearchInput>
+
+        {selected.length > 0 && (
+          <div>
+            <h4>Itens Selecionados</h4>
+            <Suggestions>
+              {selected.map(item => (
+                <Tag key={item} selected onClick={() => handleRemove(item)}>
+                  ✖ {item}
+                </Tag>
+              ))}
+            </Suggestions>
+          </div>
         )}
-      </SearchInput>
 
-      {selected.length > 0 && (
-        <div>
-          <h4>Itens Selecionados</h4>
-          <Suggestions>
-            {selected.map(item => (
-              <Tag key={item} selected onClick={() => handleRemove(item)}>
-                ✖ {item}
-              </Tag>
-            ))}
-          </Suggestions>
+        <div style={{ flex: 1 }}>
+          {query && filteredItems.length === 0 ? (
+            <EmptyState>
+              Não encontramos nenhum resultado para a sua busca.
+              <br />
+              Que tal verificar a ortografia ou tentar com outras palavras?
+            </EmptyState>
+          ) : (
+            <>
+              {!query && <h4>Sugestão de Itens</h4>}
+              <Suggestions>
+                {filteredItems.map(item => (
+                  <Tag key={item} onClick={() => handleSelect(item)}>
+                    {item}
+                  </Tag>
+                ))}
+              </Suggestions>
+            </>
+          )}
         </div>
-      )}
-
-      {query && filteredItems.length === 0 ? (
-        <EmptyState>
-          Não encontramos nenhum resultado para a sua busca.
-          <br />
-          Que tal verificar a ortografia ou tentar com outras palavras?
-        </EmptyState>
-      ) : (
-        <>
-          {!query && <h4>Sugestão de Itens</h4>}
-          <Suggestions>
-            {filteredItems.map(item => (
-              <Tag key={item} onClick={() => handleSelect(item)}>
-                {item}
-              </Tag>
-            ))}
-          </Suggestions>
-        </>
-      )}
+      </div>
 
       <Actions>
         <button className="back">Voltar</button>

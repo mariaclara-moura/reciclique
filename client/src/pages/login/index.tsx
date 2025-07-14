@@ -39,7 +39,7 @@ export default function Login() {
   return (
     <Container>
       <LeftSide>
-        <Image src={SideBg} alt="Side background" layout="fill" objectFit="cover" objectPosition="left"/>
+        <Image src={SideBg} alt="Side background" fill />
       </LeftSide>
       <RightSide>
       {isRegistering ? (
