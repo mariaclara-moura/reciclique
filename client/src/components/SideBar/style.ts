@@ -9,6 +9,10 @@ export const SideContainer = styled.aside`
   flex-direction: column;
   justify-content: space-between;
   padding: 1rem 0;
+  border-radius: 1rem;
+  background: #A0B78A;
+  box-shadow: 0px 0px 4px 0px #E1B28A;
+  margin: 2.5rem;
 
   .bg {
     position: absolute;

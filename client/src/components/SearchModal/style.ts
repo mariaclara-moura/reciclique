@@ -21,6 +21,7 @@ export const Container = styled.div`
     font-weight: 400;
     line-height: 1.25rem;
     letter-spacing: 0.0625rem;
+    font-family: 'Montserrat', sans-serif;
   }
 `;
 
@@ -28,17 +29,24 @@ export const SearchInput = styled.div`
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  height: 2.5rem;
 
   input {
+    height: 2.5rem;
     flex: 1;
     padding: 0.5rem;
     border-radius: 0.5rem;
     border: 1px solid #D9D9D9;
     background: #FFF;
+    color: rgba(0, 0, 0, 0.25);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    line-height: 1.5rem;
     &:focus {
       outline: none;
-      border-color: color: rgba(0, 0, 0, 0.5); 
+      border-color: rgba(0, 0, 0, 0.8); 
+      color: rgba(0, 0, 0, 0.8);
     }
   }
 
@@ -48,12 +56,6 @@ export const SearchInput = styled.div`
     cursor: pointer;
     font-size: 1rem;
     overflow: hidden;
-    color: rgba(0, 0, 0, 0.25);
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    font-family: Inter;
-    font-weight: 400;
-    line-height: 1.5rem;
   }
 `;
 
@@ -92,18 +94,29 @@ export const Actions = styled.div`
     background: none;
     color: #A0B78A;
     border: 1px solid #A0B78A;
-    padding: 0.4rem 1.2rem;
+    padding: 0.4rem 1rem;
     border-radius: 0.46875rem;
     cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight:  400;
+    line-height: 1.5rem; 
+
   }
 
   .filter {
     background: #A0B78A;
     color: #fff;
-    border: none;
-    padding: 0.4rem 1.2rem;
+    border: 1px solid #A0B78A;
+    padding: 0.4rem 1rem;
     border-radius: 0.46875rem;
     cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight:  400;
+    line-height: 1.5rem; 
   }
 `;
 

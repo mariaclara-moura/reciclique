@@ -60,7 +60,7 @@ export default function SearchModal() {
         )}
 
         <div style={{ flex: 1 }}>
-          {query && filteredItems.length === 0 ? (
+          {query && filteredItems.length === 0 && selected.length === 0 ? (
             <EmptyState>
               Não encontramos nenhum resultado para a sua busca.
               <br />
